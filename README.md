@@ -44,3 +44,27 @@ solution.
 
 
 Good luck!
+
+Notes
+---
+Assumptions:
+Display login and devices screen as in the the image provided.
+
+Failures
+1. The devices screen appbar is not exactly as the image.A bit more time can make it work 
+2. Tried to use json-server to fire up a local server which was a waste of time, as the post request was rewirting the json on login - was a total waste of time
+3.There are a few more minors, leaving them for you!
+
+Not working /descoped
+1. /devices api not working due to api options header do not seem to be set correctly
+2. Works through postman, but display CORB/CORS error on all browsers(chrome,IE. edge)
+
+Done:
+1. Api connected - /login , /notify
+2. Used mockup data for devices screen to make the circles moving around circle
+
+Time taken: took morethan 4 hours - stuck with /device api, spend time on spinning up local server 
+Repo Url : https://github.com/remyaphilip/frontend-developer-test
+
+
+Thank you for this opportunity.
