@@ -37,7 +37,6 @@ class DeviceScreen extends Component {
     }
     render() {
         if (this.props.activeDevices === undefined) {
-            console.log("undefined")
             return (<CommonLoadingScreen waitingText={"Please wait until devices are fetched"} />)
           }
       else
@@ -115,7 +114,7 @@ class DeviceScreen extends Component {
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                         <div style={{ padding: 5 }}>
                             <MeldxButton buttonColor={WHITE} label="NOTIFY" fontColor={BLACK} 
-                            clickHandler={()=>this.onNotify()}
+                            clickHandler={()=> this.onNotify()}
                             ></MeldxButton>
                         </div>
                         <div style={{ padding: 5 }}>
@@ -139,12 +138,17 @@ class DeviceScreen extends Component {
 onLogout(){
     this.props.logOut();
 }
+onNotify(){
+    let {token} = this.props;
+    this.props.notify({token});
+}
 }
 
 
 function mapStateToProps(state) {
     return {
         activeDevices: state.device.activeDevices,
+        token:state.auth.token,
     };
 }
 

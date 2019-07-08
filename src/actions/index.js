@@ -30,11 +30,9 @@ export function getActiveDevices() {
     let mockResponse = mockupData.mockData();
     return (dispatch) => {
         //orinigal api call not working correct as the headers in the api options call seems incorrect.Hence a mock up api response 
-        console.log(mockResponse)
         dispatch(deviceFetchSuccess(mockResponse));        
         // return axios.get(`${MAIN_URL}/devices`)
         //     .then((response) => {
-        //         console.log(response.json)
         //         dispatch(deviceFetchSuccess(response.data));
         //     })
         //     .catch((error) => {
@@ -47,15 +45,14 @@ export function notify({ token }) {
     let data = {
         name: 'Remya Philipose',
         email: 'remyap19@gmail.com',
-        repoUrl: '',
-        message: 'Test completed'
+        repoUrl: 'https://github.com/remyaphilip/frontend-developer-test',
+        message: 'Hurray!!!! Test completed'
     }
 
     return (dispatch) => {
-        return axios.post(`${MAIN_URL}/login`, data,
+        return axios.post(`${MAIN_URL}/notify`, data,
             { headers: { Authorization: authString } }).then((response) => {
                 if (response.status === 200) {
-                    console.log(response)
                     dispatch(notifySuccess(response.data));
                 }
             }).catch((error) => {
