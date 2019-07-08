@@ -68,7 +68,9 @@ Time taken: took morethan 4 hours - stuck with /device api, spend time on spinni
 Repo Url : https://github.com/remyaphilip/frontend-developer-test
 
 Project execution commands:
+
 npm install
+
 npm run start
 
 Thank you for this opportunity.
